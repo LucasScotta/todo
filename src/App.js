@@ -1,7 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import componentConfig from './componentConfig'
-// import './App.css';
 import TodoCounter from './TodoCounter';
 import TodoSearch from './TodoSearch';
 import TodoListing from './TodoListing';
