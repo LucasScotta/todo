@@ -1,23 +1,23 @@
 const componentConfig = {
     TodoCounter: {
         className: null,
-        styles: {}
+        style: {}
     },
     TodoSearch: {
         className: null,
-        styles: {}
+        style: {}
     },
     TodoListing: {
         className: null,
-        styles: {}
+        style: {}
     },
     TodoItem: {
         className: null,
-        styles: {}
+        style: {}
     },
     CreateTodoButton: {
         className: null,
-        styles: {}
+        style: {}
     },
 }
 export default componentConfig
