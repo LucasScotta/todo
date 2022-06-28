@@ -1,7 +1,8 @@
 import React from "react";
-const TodoCounter = () => {
+const TodoCounter = (props) => {
+    const config = props.config
      return (
-        <h2>Cantidad de TODOs completados vs cantidad de TODOs totales</h2>
+        <h2 className={config.className} style={config.style}>Completed 2 of 3</h2>
     );
 }
 export default TodoCounter

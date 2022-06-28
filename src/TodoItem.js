@@ -1,7 +1,8 @@
 import React from "react";
 const TodoItem = (props) => {
+    const config = props.config
     return (
-        <li>
+        <li id={config.id} className={config.className} style={config.style}>
             <span>C</span>
             <p>{props.text}</p>
             <span>X</span>

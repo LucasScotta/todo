@@ -1,7 +1,8 @@
 import React from "react";
 const TodoListing = (props) => {
+    const config = props.config
     return (
-        <section>
+        <section id={config.id} className={config.className} style={config.style}>
             <ul>
                 {props.children}
             </ul>
