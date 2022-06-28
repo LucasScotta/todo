@@ -15,16 +15,18 @@ const todos = [
 
 function App() {
   return (
-    <React.Fragment>
-      <TodoCounter config={componentConfig.TodoCounter} />
-      <TodoSearch />
-      {<TodoListing>
-        {todos.map(todo => (
-          <TodoItem key={todo.text} text={todo.text} />
-        ))}
-      </TodoListing>}
-      <CreateTodoButton />
-    </React.Fragment>
+    <div className="container">
+      <div className='row'>
+        <TodoCounter config={componentConfig.TodoCounter} />
+        <TodoSearch config={componentConfig.TodoSearch} />
+        {<TodoListing config={componentConfig.TodoListing}>
+          {todos.map(todo => (
+            <TodoItem key={todo.text} text={todo.text} config={componentConfig.TodoItem} />
+          ))}
+        </TodoListing>}
+        <CreateTodoButton config={componentConfig.CreateTodoButton} />
+      </div>
+    </div>
   );
 }
 

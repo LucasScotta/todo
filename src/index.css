@@ -1,0 +1,30 @@
+body {
+    background-color: papayawhip!important;
+}
+
+input {
+    text-align: center;
+}
+
+#searcher::placeholder {
+    font-weight: 400;
+}
+
+#searcher:focus {
+    text-align: start;
+    color: white;
+    background-color: darkorange;
+}
+.item {
+    width: 20px;
+    height: 20px;
+}
+.item-check:hover {
+    color: green;
+    cursor: pointer;
+}
+
+.item-close:hover {
+    color: red!important;
+    cursor: pointer;
+}
