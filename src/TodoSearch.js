@@ -1,5 +1,6 @@
 import React from "react";
-
-export default () => {
+const TodoSearch = () => {
     return (<input placeholder="TODO a buscar" />)
 }
+
+export default TodoSearch

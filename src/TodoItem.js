@@ -1,6 +1,5 @@
 import React from "react";
-
-export default (props) => {
+const TodoItem = (props) => {
     return (
         <li>
             <span>C</span>
@@ -9,3 +8,5 @@ export default (props) => {
         </li>
     )
 }
+
+export default TodoItem

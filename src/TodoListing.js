@@ -1,6 +1,5 @@
 import React from "react";
-
-export default (props) => {
+const TodoListing = (props) => {
     return (
         <section>
             <ul>
@@ -9,3 +8,5 @@ export default (props) => {
         </section>
     )
 }
+
+export default TodoListing

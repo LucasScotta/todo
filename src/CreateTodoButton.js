@@ -1,5 +1,6 @@
 import React from "react";
-
-export default () => {
+const CreateTodoButton = () => {
     return (<button>CREAR</button>)
 }
+
+export default CreateTodoButton
