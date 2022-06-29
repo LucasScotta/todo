@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 function useLocalStorage (storageName, init) {
-    console.log(storageName)
     const localStorageTodos = localStorage.getItem(storageName)
     let parsedTodos
     if (!localStorageTodos) {
