@@ -6,17 +6,11 @@ import TodoSearch from './components/TodoSearch';
 import TodoListing from './components/TodoListing';
 import TodoItem from './components/TodoItem'
 import CreateTodoButton from './components/CreateTodoButton'
-
-const todo = [
-  {text: 'descripcion1', completed: true},
-  {text: 'descripcion2', completed: false},
-  {text: 'descripcion3', completed: false},
-  {text: 'asd', completed: false},
-  {text: 'asd', completed: false},
-];
+import useLocalStorage from './hooks/useLocalStorage'
 
 function App() {
-  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem('todos')) || todo)
+
+  const [todos, saveTodos] = useLocalStorage('todos', [])
   const [search, setSearch] = useState('')
   const total = todos.length
   let searched = []
@@ -36,15 +30,13 @@ function App() {
     const index = todos.indexOf(todo)
     const arr = [...todos]
     arr[index].completed = !arr[index].completed
-    setTodos(arr)
-    localStorage.setItem('todos', JSON.stringify(arr))
+    saveTodos(arr)
   }
   const deleteTodo = (todo) => {
     const index = todos.indexOf(todo)
     const arr = [...todos]
     arr.splice(index, 1)
-    setTodos(arr)
-    localStorage.setItem('todos', JSON.stringify(arr))
+    saveTodos(arr)
   }
   return (
     <div className="container">
@@ -72,7 +64,7 @@ function App() {
         </TodoListing>}
         <CreateTodoButton
           todos={todos}
-          setTodos={setTodos}
+          saveTodos={saveTodos}
           config={componentConfig.CreateTodoButton} />
       </div>
     </div>
