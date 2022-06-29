@@ -1,8 +1,7 @@
 import React from "react";
-const TodoSearch = (props) => {
-    const config = props.config
-    const onText = (e) => {
-        console.log(e.target.value)
+const TodoSearch = ({config, search, setSearch}) => {
+    const changeText = (e) => {
+        setSearch(e.target.value)
     }
     return (
         <div className={config.className} style={config.style}>
@@ -10,7 +9,8 @@ const TodoSearch = (props) => {
                 id='searcher'
                 type="text"
                 placeholder="TODO searcher"
-                onChange={onText} />
+                value={search}
+                onChange={changeText} />
         </div>)
 }
 

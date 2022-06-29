@@ -24,12 +24,11 @@ const componentConfig = {
     },
     TodoItem: {
         id: null,
-        className: 'w-50 border row',
+        className: 'border row',
         style: {
             display: 'flex',
             textAlign: 'center',
             position: 'relative',
-            left: '25%',
         },
     },
     CreateTodoButton: {

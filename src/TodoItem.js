@@ -8,10 +8,10 @@ const TodoItem = (props) => {
         alert('borrar TODO')
     }
     return (
-        <li id={config.id} className={`${config.className}`} onClick={onComplete} style={config.style}>
+        <li id={config.id} className={`${config.className}`} style={config.style}>
             <span
-                className="col-3
-                offset-2 item item-check">✓</span>
+                className="col-3 offset-2 item item-check"
+                onClick={onComplete}>✓</span>
             <p className="col-3">{props.text}</p>
             <span
                 className="col-3 item item-close"
