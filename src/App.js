@@ -16,7 +16,7 @@ const todo = [
 ];
 
 function App() {
-  const [todos, setTodos] = useState(todo)
+  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem('todos')) || todo)
   const [search, setSearch] = useState('')
   const total = todos.length
   let searched = []
@@ -37,12 +37,14 @@ function App() {
     const arr = [...todos]
     arr[index].completed = !arr[index].completed
     setTodos(arr)
+    localStorage.setItem('todos', JSON.stringify(arr))
   }
   const deleteTodo = (todo) => {
     const index = todos.indexOf(todo)
     const arr = [...todos]
     arr.splice(index, 1)
     setTodos(arr)
+    localStorage.setItem('todos', JSON.stringify(arr))
   }
   return (
     <div className="container">
