@@ -8,7 +8,7 @@ import TodoItem from './TodoItem'
 import CreateTodoButton from './CreateTodoButton'
 
 const todo = [
-  {text: 'descripcion1', completed: false},
+  {text: 'descripcion1', completed: true},
   {text: 'descripcion2', completed: false},
   {text: 'descripcion3', completed: false},
 ];
@@ -16,7 +16,6 @@ const todo = [
 function App() {
   const [todos, setTodos] = useState(todo)
   const [search, setSearch] = useState('')
-  const completed = todos.filter(todo => todo.completed).length
   const total = todos.length
   let searched = []
   if (search.length > 0) {
@@ -29,6 +28,19 @@ function App() {
   }
   else {
     searched = todos
+  }
+  const completed = searched.filter(todo => todo.completed).length
+  const changeComplete = (todo) => {
+    const index = todos.indexOf(todo)
+    const arr = [...todos]
+    arr[index].completed = !arr[index].completed
+    setTodos(arr)
+  }
+  const deleteTodo = (todo) => {
+    const index = todos.indexOf(todo)
+    const arr = [...todos]
+    arr.splice(index, 1)
+    setTodos(arr)
   }
   return (
     <div className="container">
@@ -43,7 +55,15 @@ function App() {
           config={componentConfig.TodoSearch} />
         {<TodoListing config={componentConfig.TodoListing}>
           {searched.map(todo => (
-            <TodoItem key={todo.text} text={todo.text} config={componentConfig.TodoItem} />
+            <TodoItem
+              key={todo.text}
+              completed={todo.completed}
+              text={todo.text}
+              onComplete={() => changeComplete(todo)}
+              onDelete={() => deleteTodo(todo)}
+              todo={todo}
+              todos={todos}
+              config={componentConfig.TodoItem} />
           ))}
         </TodoListing>}
         <CreateTodoButton

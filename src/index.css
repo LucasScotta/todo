@@ -16,18 +16,13 @@ input {
     background-color: darkorange;
 }
 .item {
-    width: 20%!important;
-    height: 20%!important;
-}
-.item-check:hover {
-    color: green;
     cursor: pointer;
+    width: 20px!important;
+    height: 20px!important;
 }
-.item-close:hover {
-    color: red!important;
-    cursor: pointer;
+input:checked + p{
+    text-decoration: line-through;
 }
-
 #todo-btn:hover {
     transform: rotate(360deg);
     box-shadow: 5px 5px 25px red;
