@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import componentConfig from './componentConfig'
-import TodoCounter from './TodoCounter';
-import TodoSearch from './TodoSearch';
-import TodoListing from './TodoListing';
-import TodoItem from './TodoItem'
-import CreateTodoButton from './CreateTodoButton'
+import componentConfig from './util/componentConfig'
+import TodoCounter from './components/TodoCounter';
+import TodoSearch from './components/TodoSearch';
+import TodoListing from './components/TodoListing';
+import TodoItem from './components/TodoItem'
+import CreateTodoButton from './components/CreateTodoButton'
 
 const todo = [
   {text: 'descripcion1', completed: true},
   {text: 'descripcion2', completed: false},
   {text: 'descripcion3', completed: false},
+  {text: 'asd', completed: false},
+  {text: 'asd', completed: false},
 ];
 
 function App() {
@@ -54,9 +56,9 @@ function App() {
           setSearch={setSearch}
           config={componentConfig.TodoSearch} />
         {<TodoListing config={componentConfig.TodoListing}>
-          {searched.map(todo => (
+          {searched.map((todo, i) => (
             <TodoItem
-              key={todo.text}
+              key={i}
               completed={todo.completed}
               text={todo.text}
               onComplete={() => changeComplete(todo)}
