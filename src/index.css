@@ -23,8 +23,12 @@ input {
     color: green;
     cursor: pointer;
 }
-
 .item-close:hover {
     color: red!important;
     cursor: pointer;
+}
+
+#todo-btn:hover {
+    transform: rotate(360deg);
+    box-shadow: 5px 5px 25px red;
 }

@@ -12,29 +12,42 @@ const componentConfig = {
         style: {
             display: 'flex',
             justifyContent: 'center',
-            width: 'calc(100% - 62px)!important',
         },
     },
     TodoListing: {
         id: 'listing',
         className: null,
-        style: {listStyle: 'none'},
+        style: {
+            listStyle: 'none',
+            display:'flex',
+        },
     },
     TodoItem: {
         id: null,
-        className: 'row mb-3 place-items-center justify-items-center',
-        style: {display:'flex'},
+        className: 'w-50 border row',
+        style: {
+            display: 'flex',
+            textAlign: 'center',
+            position: 'relative',
+            left: '25%',
+        },
     },
     CreateTodoButton: {
-        id: null,
+        id: 'todo-btn',
         className: 'btn btn-warning',
         style: {
+            position: 'relative',
+            display: 'flex',
+            justifyContent: 'center',
+            alignContent: 'center',
             borderRadius: "50%",
             width: '50px',
             height: '50px',
             textAlign: 'center',
-            position: 'relative',
             left: '50%',
+            fontSize: '25px',
+            transition: '0.5s ease',
+            fontWeight: 'bold',
         },
     },
 }
