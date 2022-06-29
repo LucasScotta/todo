@@ -1,5 +1,5 @@
 import React from "react";
-const TodoItem = ({config, text, completed, todos, todo, onComplete, onDelete}) => {
+const TodoItem = ({config, text, completed, onComplete, onDelete}) => {
     return (
         <li id={config.id} className={`${config.className}`} style={config.style}>
             <span className="col-2 offset-2 item-check" />

@@ -1,8 +1,11 @@
 import React from "react";
+import { TodoContext } from '../Provider'
 const TodoListing = (props) => {
-    const config = props.config
+    const {
+        componentConfig
+    } = React.useContext(TodoContext)
     return (
-        <section id={config.id} className={config.className} style={config.style}>
+        <section id={componentConfig.TodoListing.id} className={componentConfig.TodoListing.className} style={componentConfig.TodoListing.style}>
             <ul style={{listStyle:'none', width:'100%'}}>
                 {props.children}
             </ul>

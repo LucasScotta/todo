@@ -1,17 +1,24 @@
 import React from "react";
-const TodoSearch = ({config, search, setSearch}) => {
+import { TodoContext } from "../Provider";
+const TodoSearch = () => {
+    const {
+        componentConfig,
+        search,
+        setSearch,
+    } = React.useContext(TodoContext)
     const changeText = (e) => {
         setSearch(e.target.value)
     }
     return (
-        <div className={config.className} style={config.style}>
+        <div className={componentConfig.TodoSearch.className} style={componentConfig.TodoSearch.style}>
             <input
                 id='searcher'
                 type="text"
                 placeholder="TODO searcher"
                 value={search}
                 onChange={changeText} />
-        </div>)
+        </div>
+        )
 }
 
 export default TodoSearch

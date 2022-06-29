@@ -1,14 +1,17 @@
 import React from "react";
-const CreateTodoButton = (props) => {
-    const config = props.config
+import { TodoContext } from "../Provider";
+const CreateTodoButton = () => {
+    const {
+        componentConfig,
+    } = React.useContext(TodoContext)
     const buttonClicked = (e) => {
         console.log(e)
     }
     return (
     <button
-        id={config.id}
-        className={config.className}
-        style={config.style}
+        id={componentConfig.CreateTodoButton.id}
+        className={componentConfig.CreateTodoButton.className}
+        style={componentConfig.CreateTodoButton.style}
         onClick={buttonClicked}>
             +
     </button>)
