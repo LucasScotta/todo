@@ -3,9 +3,11 @@ import { TodoContext } from "../Provider";
 const CreateTodoButton = () => {
     const {
         componentConfig,
+        modal,
+        setModal
     } = React.useContext(TodoContext)
     const buttonClicked = (e) => {
-        console.log(e)
+        setModal(true)
     }
     return (
     <button

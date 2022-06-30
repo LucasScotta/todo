@@ -10,6 +10,7 @@ import useLocalStorage from './hooks/useLocalStorage'
 const TodoContext = createContext()
 
 const TodoProvider = (props) => {
+    const [modal, setModal] = useState(false)
     const [todos, saveTodos] = useLocalStorage('todos', [])
     const [search, setSearch] = useState('')
     const total = todos.length
@@ -24,6 +25,15 @@ const TodoProvider = (props) => {
     }
     else {
         searched = todos
+    }
+    const addTodo = () => {
+        const newTodo = document.getElementById('TODO').value
+        if(newTodo) {
+            const arr = todos
+            arr.push({text:newTodo, completed: false})
+            saveTodos(arr)
+        }
+        setModal(!modal)
     }
     const completed = searched.filter(todo => todo.completed).length
     const changeComplete = (todo) => {
@@ -52,6 +62,9 @@ const TodoProvider = (props) => {
             changeComplete,
             deleteTodo,
             searched,
+            modal,
+            setModal,
+            addTodo
         }}>
             {props.children}
         </TodoContext.Provider>

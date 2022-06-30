@@ -49,5 +49,17 @@ const componentConfig = {
             fontWeight: 'bold',
         },
     },
+    Modal: {
+        id: null,
+        className: 'd-flex justify-content-center align-items-center position-fixed',
+        style: {
+            background: 'rgba(32,35,41,.8)',
+            top: '-10px',
+            left: '-10px',
+            right: '-10px',
+            bottom: '-10px',
+            color: 'white',
+            }
+    }
 }
 export default componentConfig
